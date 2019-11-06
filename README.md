@@ -16,9 +16,5 @@ This extension contributes the following settings:
 ## Known Issues
 None
 
-## Release Notes
-### 0.0.1
-Initial release of xslt-transform
-
 ## License
 xslt-transform is licensed under [MIT License](https://github.com/BulletTime/vscode-xslt-transform/blob/master/LICENSE).
