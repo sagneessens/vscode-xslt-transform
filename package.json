@@ -1,8 +1,8 @@
 {
 	"name": "xslt-transform",
 	"displayName": "xslt-transform",
-	"description": "",
-	"publisher": "Sven",
+	"description": "An extension to perform xslt transformations with the Saxon xslt processor",
+	"publisher": "SvenAGN",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -13,6 +13,10 @@
 	"activationEvents": [
 		"onCommand:xslt.transform"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BulletTime/vscode-xslt-transform.git"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
