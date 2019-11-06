@@ -6,11 +6,15 @@ export class Runner {
 
     private _process: ChildProcess | undefined;
 
-    public runCommand(command: string, args: string[], cwd?: string) {
+    public runCommand(command: string, args: string[], data: string, cwd?: string) {
         xsltOutputChannel.clear();
         xsltOutputChannel.show();
 
         this._process = spawn(command, args, {cwd: cwd, shell: true});
+
+        this._process.stdin.end(data, async () => {
+            xsltOutputChannel.append("file contents written to stdin");
+        });
 
         this._process.stdout.on('data', async (data) => {
             try {
@@ -39,7 +43,7 @@ export class Runner {
         });
     }
 
-    public runXSLTTtransformationCommand(command: string, cwd?: string) {
-        this.runCommand(command, [], cwd);
+    public runXSLTTtransformationCommand(command: string, xml: string, cwd?: string) {
+        this.runCommand(command, [], xml, cwd);
     }
 }

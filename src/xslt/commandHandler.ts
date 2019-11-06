@@ -11,7 +11,7 @@ export async function executeXSLTTransformCommand(transformation: XSLTTransforma
     }
 
     let commandRunner: Runner = new Runner();
-    commandRunner.runXSLTTtransformationCommand(cmd, cwd);
+    commandRunner.runXSLTTtransformationCommand(cmd, transformation.xml, cwd);
 }
 
 function getXSLTTransformCommand(transformation: XSLTTransformation): string {
@@ -20,7 +20,6 @@ function getXSLTTransformCommand(transformation: XSLTTransformation): string {
         "-jar",
         transformation.processor,
         "-s:-",
-        `-xsl:${transformation.xslt}`,
-        `<<EOF\n${transformation.xml}\nEOF`
+        `-xsl:${transformation.xslt}`
     ].join(" ");
 }
