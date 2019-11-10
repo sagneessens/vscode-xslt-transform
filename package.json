@@ -3,7 +3,7 @@
 	"displayName": "xslt-transform",
 	"description": "An extension to perform xslt transformations with the Saxon xslt processor",
 	"publisher": "SvenAGN",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
