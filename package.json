@@ -4,6 +4,7 @@
 	"description": "An extension to perform XSLT transformations with the Saxon XSLT processor",
 	"publisher": "SvenAGN",
 	"license": "MIT",
+	"version": "0.0.4",
 	"engines": {
 		"vscode": "^1.37.0"
 	},
@@ -31,9 +32,9 @@
 		},
 		"commands": [
 			{
-			"command": "xslt.transform",
-			"title": "Run Transformation",
-			"category": "XSLT"
+				"command": "xslt.transform",
+				"title": "Run Transformation",
+				"category": "XSLT"
 			}
 		]
 	},
