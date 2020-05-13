@@ -7,13 +7,13 @@ export class Runner {
     private _process: ChildProcess | undefined;
     private _chunks: Array<Buffer> = [];
 
-    public runCommand(command: string, args: string[], data: string, cwd?: string) {
+    public runXSLTTtransformationCommand(command: string, args: string[], xml: string, cwd?: string) {
         xsltOutputChannel.clear();
         xsltOutputChannel.show();
 
         this._process = spawn(command, args, {cwd: cwd, shell: true});
 
-        this._process.stdin.end(data, () => {
+        this._process.stdin.end(xml, () => {
             xsltOutputChannel.append("file contents written to stdin");
         });
 
@@ -42,9 +42,5 @@ export class Runner {
                 window.showInformationMessage("XSLT transformation failed.");
             }
         });
-    }
-
-    public runXSLTTtransformationCommand(command: string, xml: string, cwd?: string) {
-        this.runCommand(command, [], xml, cwd);
     }
 }
