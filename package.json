@@ -1,9 +1,9 @@
 {
 	"name": "xslt-transform",
 	"displayName": "xslt-transform",
-	"description": "An extension to perform xslt transformations with the Saxon xslt processor",
+	"description": "An extension to perform XSLT transformations with the Saxon XSLT processor",
 	"publisher": "SvenAGN",
-	"version": "0.0.3",
+	"license": "MIT",
 	"engines": {
 		"vscode": "^1.37.0"
 	},
@@ -25,15 +25,17 @@
 				"xslt.processor": {
 					"type": "string",
 					"default": "",
-					"description": "Define the path to the xslt processor"
+					"description": "Define the path to the XSLT processor"
 				}
 			}
 		},
-		"commands": [{
+		"commands": [
+			{
 			"command": "xslt.transform",
 			"title": "Run Transformation",
 			"category": "XSLT"
-		}]
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
